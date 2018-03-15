@@ -7,7 +7,7 @@
 ## Utils file
 ##
 
-import sys
+from sys import exit, argv, stderr
 
 def tab_fcts():
     fct_tab = [my_exp, my_cos, my_cosh, my_sinh]
@@ -20,26 +20,26 @@ def my_help():
           "\tfun\tfunction to be applied,"
           ' among at least "EXP", "COS", "SIN", "COSH" and "SINH"\n'
           '\tai\tcoeficients of the matrix')
-    sys.exit(0)
+    exit(0)
 
 def check_parameters():
-    if "--help" in sys.argv or "-h" in sys.argv:
+    if "--help" in argv or "-h" in argv:
         my_help()
-    if len(sys.argv) <= 2 or sys.argv[1] not in ["EXP", "COS", "SIN", "COSH", "SINH"]:
-        print("Bad format, see --help, -h, or man entry for more info", file=sys.stderr)
-        sys.exit(84)
+    if len(argv) <= 2 or argv[1] not in ["EXP", "COS", "SIN", "COSH", "SINH"]:
+        print("Bad format, see --help, -h, or man entry for more info", file=stderr)
+        exit(84)
     try:
-        for i in range(2, len(sys.argv)):
-            sys.argv[i] = float(sys.argv[i])
+        for i in range(2, len(argv)):
+            argv[i] = float(argv[i])
     except ValueError:
-        print("Argument %d (%s) must be a number" % (i, sys.argv[i]), file=sys.stderr)
+        print("Argument %d (%s) must be a number" % (i, argv[i]), file=stderr)
 
 def error_mngmt():
-    i = len(sys.argv) - 2
+    i = len(argv) - 2
     sqi = trunc(sqrt(i))
     if trunc(sqrt(i)) ** 2 != i:
-        print("Not enough parameters to create a matrix", file=sys.stderr)
-        sys.exit(84)
+        print("Not enough parameters to create a matrix", file=stderr)
+        exit(84)
     return sqi
 
 def print_matrix(tab):
@@ -51,6 +51,6 @@ def launch_func(tab):
     args = ["EXP", "COS", "SIN", "COSH", "SINH"]
     fct_tab = [my_exp, my_cos, my_sin, my_cosh, my_sinh]
     for i in range(len(fct_tab)):
-        if sys.argv[1] == args[i]:
+        if argv[1] == args[i]:
             tab = fct_tab[i](tab)
     return tab
