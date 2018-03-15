@@ -6,13 +6,14 @@
 ##
 
 all:
-	cat src/main.py > 108trigo
-	chmod +x 108trigo
+		ln -s src/main.py 108trigo
+		chmod +x 108trigo
 
 clean:
-	rm -rf file
+		rm -rf file
 
 fclean: clean
-	rm -rf 108trigo
+		chmod -x src/main.py
+		rm -rf 108trigo
 
 re: 	fclean all
