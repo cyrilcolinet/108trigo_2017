@@ -9,13 +9,13 @@ NAME 	=	108trigo
 
 CC 		= 	gcc
 
-TESTS 	=	108trigo_cos_tests.c
+TESTS 	=	tests/108trigo_cos_tests.c
 
 CFLAGS 	= 	-Wall -Wextra
 
 LDFLAGS	=	-lcriterion
 
-OBJ 	= 	$(SRC=.c=.o)
+OBJ 	= 	$(TESTS:.c=.o)
 
 all:
 		ln -s src/main.py $(NAME)
@@ -31,5 +31,6 @@ fclean: clean
 
 re: 	fclean all
 
-tests_run: $(OBJ)
+tests_run: fclean $(OBJ)
 		$(CC) $(CFLAGS) $(LDFLAGS) $(OBJ) -o units
+		./units

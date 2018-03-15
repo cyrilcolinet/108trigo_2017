@@ -7,6 +7,7 @@
 
 # include <criterion/criterion.h>
 # include <criterion/redirect.h>
+# include <stdlib.h>
 
 void redirect_std(void)
 {
@@ -14,7 +15,9 @@ void redirect_std(void)
 	cr_redirect_stdout();
 }
 
-Test(108trigo, example_cos, .init = redirect_std)
+Test(trigo, example_cos, .init = redirect_std)
 {
+	int res = system("make re");
 
+	cr_assert_eq(res, 0);
 }
