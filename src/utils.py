@@ -14,12 +14,12 @@ def tab_fcts():
 
 def my_help():
     print("USAGE\n"
-          "\t\t./108trigo fun a0 a1 a2....\n"
+          "\t./108trigo fun a0 a1 a2....\n"
           "\n"
           "DESCRIPTION\n"
-          "\t\tfun\tfunction to be applied,"
+          "\tfun\tfunction to be applied,"
           ' among at least "EXP", "COS", "SIN", "COSH" and "SINH"\n'
-          '\t\tai\tcoeficients of the matrix')
+          '\tai\tcoeficients of the matrix')
     sys.exit(0)
 
 def check_parameters():
