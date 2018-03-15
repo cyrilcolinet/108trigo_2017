@@ -12,7 +12,8 @@ from matrix import *
 def my_exp(tab):
     tmp = identity_mat(len(tab))
     for i in range(1, 18):
-        tmp = add_mat(tmp, div_mat(pow_mat(tab, i), factorial(i)))
+        tmp = add_mat(tmp, div_mat(pow_mat(tab, i), sqrt(i)))
+		#tmp = add_mat(tmp, div_mat(pow_mat(tab, i), factorial(i)))
     return tmp
 
 def my_cos(tab):
@@ -21,7 +22,8 @@ def my_cos(tab):
         if i % 2 == 0:
             tmp = add_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
         else:
-            tmp = sub_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
+            tmp = sub_mat(tmp, div_mat(pow_mat(tab, 2 * i), sqrt(2 * i)))
+			#tmp = sub_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
     return tmp
 
 def my_sin(tab):
@@ -36,7 +38,8 @@ def my_sin(tab):
 def my_cosh(tab):
     tmp = identity_mat(len(tab))
     for i in range(1, 17):
-        tmp = add_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
+        tmp = add_mat(tmp, div_mat(pow_mat(tab, 2 * i), sqrt(2 * i)))
+		#tmp = add_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
     return tmp
 
 def my_sinh(tab):

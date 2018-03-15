@@ -12,31 +12,31 @@ from math import *
 def identity_mat(n):
     tmp = []
     for i in range(n):
-        caca = []
+        ident = []
         for j in range(n):
-            caca.append(1 if j == i else 0)
-        tmp.append(caca)
+            ident.append(1 if j == i else 0)
+        tmp.append(ident)
     return tmp
 
 def init_mat(n, k):
     tmp = []
     for i in range(n):
-        caca = []
+        ident = []
         for j in range(n):
-            caca.append(k)
-        tmp.append(caca)
+            ident.append(k)
+        tmp.append(ident)
     return tmp
 
 def mat_mult(mat1, mat2):
     tmp = []
     for i in range(len(mat1)):
-        moustique = []
+        mult = []
         for j in range(len(mat2[0])):
             a = 0
             for k in range(len(mat1[0])):
                 a += mat1[i][k] * mat2[k][j]
-            moustique.append(a)
-        tmp.append(moustique)
+            mult.append(a)
+        tmp.append(mult)
     return tmp
 
 def pow_mat(mat, n):
