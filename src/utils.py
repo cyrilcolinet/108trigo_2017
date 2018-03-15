@@ -32,7 +32,7 @@ def check_parameters():
         for i in range(2, len(argv)):
             argv[i] = float(argv[i])
     except ValueError:
-        print("Argument %d (%s) must be a number" % (i, argv[i]), file=stderr)
+        print("Argument %d (%s) isn't a number" % (i, argv[i]), file=stderr)
 
 def error_mngmt():
     i = len(argv) - 2
