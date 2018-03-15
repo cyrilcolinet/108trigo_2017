@@ -9,9 +9,11 @@ NAME 	=	108trigo
 
 CC 		= 	gcc
 
-TESTS 	=	tests/108trigo_cos_tests.c
+TESTS 	=	tests/108trigo_basics_tests.c 			\
+			tests/108trigo_cos_tests.c 				\
+			tests/108trigo_utils.c
 
-CFLAGS 	= 	-Wall -Wextra
+CFLAGS 	= 	-Wall -Wextra -I./include
 
 LDFLAGS	=	-lcriterion
 
