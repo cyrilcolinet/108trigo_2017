@@ -7,7 +7,7 @@
 ## Main file
 ##
 
-import sys
+from sys import argv, exit
 from utils import *
 
 def main():
@@ -17,10 +17,10 @@ def main():
     for i in range(int(sqi)):
         tab.append([])
         for j in range(int(sqi)):
-            tab[i].append(sys.argv[i * int(sqi) + j + 2])
+            tab[i].append(argv[i * int(sqi) + j + 2])
     tab = launch_func(tab)
     print_matrix(tab)
 
 if __name__ == '__main__':
     main()
-    sys.exit(0)
+    exit(0)
