@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 ##
 ## EPITECH PROJECT, 2018
 ## 108trigo_2017
