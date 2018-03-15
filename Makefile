@@ -23,6 +23,7 @@ all:
 
 clean:
 		rm -rf file
+		rm -rf $(OBJ)
 
 fclean: clean
 		chmod -x src/main.py
