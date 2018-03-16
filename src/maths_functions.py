@@ -10,8 +10,7 @@ from matrix import *
 def my_exp(tab):
     tmp = identity_mat(len(tab))
     for i in range(1, 18):
-        tmp = add_mat(tmp, div_mat(pow_mat(tab, i), sqrt(i)))
-		#tmp = add_mat(tmp, div_mat(pow_mat(tab, i), factorial(i)))
+        tmp = add_mat(tmp, div_mat(pow_mat(tab, i), factorial(i)))
     return tmp
 
 def my_cos(tab):
