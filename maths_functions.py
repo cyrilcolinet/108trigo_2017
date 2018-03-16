@@ -19,8 +19,7 @@ def my_cos(tab):
         if i % 2 == 0:
             tmp = add_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
         else:
-            tmp = sub_mat(tmp, div_mat(pow_mat(tab, 2 * i), sqrt(2 * i)))
-			#tmp = sub_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
+            tmp = sub_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
     return tmp
 
 def my_sin(tab):
