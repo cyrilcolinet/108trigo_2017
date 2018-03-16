@@ -33,6 +33,7 @@ def check_parameters():
             sys.argv[i] = float(sys.argv[i])
     except ValueError:
         print("Argument %d (%s) isn't a number" % (i, sys.argv[i]), file=sys.sys.stderr)
+		exit(84)
 
 def error_mngmt():
     i = len(sys.argv) - 2
