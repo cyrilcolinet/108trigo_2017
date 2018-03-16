@@ -34,9 +34,8 @@ def my_sin(tab):
 def my_cosh(tab):
     tmp = identity_mat(len(tab))
     for i in range(1, 20):
+		tmp = add_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
     return tmp
-	tmp = add_mat(tmp, div_mat(pow_mat(tab, 2 * i), factorial(2 * i)))
-
 def my_sinh(tab):
     tmp = tab
     for i in range(1, 20):
