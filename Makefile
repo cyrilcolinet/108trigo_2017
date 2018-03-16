@@ -20,7 +20,7 @@ LDFLAGS	=	-lcriterion
 OBJ 	= 	$(TESTS:.c=.o)
 
 all:
-		ln -s src/main.py $(NAME)
+		echo -e "#!/bin/sh\npython3 src/main.py" > $(NAME)
 		chmod +x $(NAME)
 
 clean:
