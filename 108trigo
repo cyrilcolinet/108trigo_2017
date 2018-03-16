@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 ##
 ## EPITECH PROJECT, 2018
@@ -7,7 +7,7 @@
 ## Main file
 ##
 
-from sys import argv, exit
+import sys
 from utils import *
 
 def main():
@@ -17,7 +17,7 @@ def main():
     for i in range(int(sqi)):
         tab.append([])
         for j in range(int(sqi)):
-            tab[i].append(argv[i * int(sqi) + j + 2])
+            tab[i].append(sys.argv[i * int(sqi) + j + 2])
     tab = launch_func(tab)
     print_matrix(tab)
 

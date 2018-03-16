@@ -5,8 +5,8 @@
 ## Utils file
 ##
 
-from sys import exit, argv, stderr
-from math import trunc, sqrt
+import sys
+import math
 from maths_functions import *
 
 def tab_fcts():
@@ -23,22 +23,22 @@ def my_help():
     exit(0)
 
 def check_parameters():
-    if "--help" in argv or "-h" in argv:
+    if "--help" in sys.argv or "-h" in sys.argv:
         my_help()
-    if len(argv) <= 2 or argv[1] not in ["EXP", "COS", "SIN", "COSH", "SINH"]:
-        print("Missing arguments.\nUsage: ./108trigo fun a0 a1 a2 ...", file=stderr)
+    if len(sys.argv) <= 2 or sys.argv[1] not in ["EXP", "COS", "SIN", "COSH", "SINH"]:
+        print("Missing arguments.\nUsage: ./108trigo fun a0 a1 a2 ...", file=sys.stderr)
         exit(84)
     try:
-        for i in range(2, len(argv)):
-            argv[i] = float(argv[i])
+        for i in range(2, len(sys.argv)):
+            sys.argv[i] = float(sys.argv[i])
     except ValueError:
-        print("Argument %d (%s) isn't a number" % (i, argv[i]), file=stderr)
+        print("Argument %d (%s) isn't a number" % (i, sys.argv[i]), file=sys.sys.stderr)
 
 def error_mngmt():
-    i = len(argv) - 2
+    i = len(sys.argv) - 2
     sqi = trunc(sqrt(i))
     if trunc(sqrt(i)) ** 2 != i:
-        print("Missing arguments.\nUsage: ./108trigo fun a0 a1 a2 ...", file=stderr)
+        print("Missing arguments.\nUsage: ./108trigo fun a0 a1 a2 ...", file=sys.stderr)
         exit(84)
     return sqi
 
@@ -51,6 +51,6 @@ def launch_func(tab):
     args = ["EXP", "COS", "SIN", "COSH", "SINH"]
     fct_tab = [my_exp, my_cos, my_sin, my_cosh, my_sinh]
     for i in range(len(fct_tab)):
-        if argv[1] == args[i]:
+        if sys.argv[1] == args[i]:
             tab = fct_tab[i](tab)
     return tab
