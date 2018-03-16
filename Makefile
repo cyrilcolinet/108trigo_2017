@@ -20,11 +20,14 @@ LDFLAGS	=	-lcriterion
 OBJ 	= 	$(TESTS:.c=.o)
 
 all:
-		echo -e "#!/bin/sh\npython3 src/main.py" > $(NAME)
+		cd src/
+		echo -e "#!/bin/sh\npython3 main.py" > src/project
+		chmod +x src/project
+		echo -e "#!/bin/sh\n./src/project" > $(NAME)
 		chmod +x $(NAME)
 
 clean:
-		rm -rf file
+		rm -rf src/project
 		rm -rf $(OBJ)
 
 fclean: clean
