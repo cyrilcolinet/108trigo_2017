@@ -29,3 +29,4 @@ script:
   - ./108trigo ./108trigo COS ; if [[ $(echo $?) == 84 ]]; then return 0; else return 84; fi
   - ./108trigo ./108trigo EXP ; if [[ $(echo $?) == 84 ]]; then return 0; else return 84; fi
   - ./108trigo ./108trigo SINH ; if [[ $(echo $?) == 84 ]]; then return 0; else return 84; fi
+  - make tests_run
