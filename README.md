@@ -1,6 +1,6 @@
 # 108trigo - Further Fiddling with Fancy Fundamental Functions
 
-[![Build Status](https://travis-ci.org/mrlizzard/109titration_2017.svg?branch=master)](https://travis-ci.org/mrlizzard/109titration_2017)
+[![Build Status](https://travis-ci.org/mrlizzard/108trigo_2017.svg?branch=master)](https://travis-ci.org/mrlizzard/108trigo_2017)
 
 - **Binary name:** 108trigo
 - **Repository name:** 109trigo_2017
